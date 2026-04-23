@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import 'leaflet/dist/leaflet.css';
+@import 'react-datepicker/dist/react-datepicker.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(30, 70, 136, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(253, 79, 15, 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar            { width: 6px; }
+  ::-webkit-scrollbar-track      { @apply bg-slate-900; }
+  ::-webkit-scrollbar-thumb      { @apply bg-ocean-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover{ @apply bg-ocean-500; }
+}
+
+@layer components {
+  /* ── Glass ─────────────────────────────────────── */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.3s ease;
+  }
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(59, 155, 243, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(59, 155, 243, 0.1);
+  }
+
+  /* ── Buttons ────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-gradient-to-r from-ocean-600 to-ocean-500
+           hover:from-ocean-500 hover:to-ocean-400 text-white font-semibold
+           px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer border-0
+           shadow-lg shadow-ocean-900/40 hover:shadow-ocean-700/50
+           hover:scale-105 active:scale-95 no-underline;
+  }
+
+  .btn-coral {
+    @apply inline-flex items-center gap-2 bg-gradient-to-r from-coral-600 to-coral-500
+           hover:from-coral-500 hover:to-coral-400 text-white font-semibold
+           px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer border-0
+           shadow-lg shadow-coral-900/40 hover:shadow-coral-700/50
+           hover:scale-105 active:scale-95 no-underline;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-ocean-500/50 text-ocean-400
+           hover:bg-ocean-500/10 hover:border-ocean-400 font-semibold
+           px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer bg-transparent
+           hover:scale-105 active:scale-95 no-underline
+           disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  /* ── Badges ─────────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  .badge-ocean { @apply bg-ocean-500/20 text-ocean-300 border border-ocean-500/30; }
+  .badge-coral { @apply bg-coral-500/20  text-coral-300  border border-coral-500/30;  }
+  .badge-sand  { @apply bg-sand-500/20   text-sand-300   border border-sand-500/30;   }
+  .badge-green { @apply bg-emerald-500/20 text-emerald-300 border border-emerald-500/30; }
+
+  /* ── Tag ────────────────────────────────────────── */
+  .tag {
+    @apply inline-block px-2.5 py-0.5 rounded-md text-xs font-medium
+           bg-white/10 text-slate-300;
+  }
+
+  /* ── Typography ─────────────────────────────────── */
+  .section-title {
+    @apply font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white;
+  }
+  .section-subtitle {
+    @apply text-slate-400 text-lg md:text-xl leading-relaxed;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-ocean-400 via-ocean-300 to-coral-400 bg-clip-text text-transparent;
+  }
+  .gradient-text-gold {
+    @apply bg-gradient-to-r from-sand-400 to-sand-300 bg-clip-text text-transparent;
+  }
+
+  /* ── Form ───────────────────────────────────────── */
+  .input-field {
+    @apply w-full bg-white/5 border border-white/10 text-white placeholder-slate-500
+           rounded-xl px-4 py-3 text-sm transition-all duration-200 outline-none
+           focus:border-ocean-500/60 focus:bg-white/[0.08] font-sans;
+  }
+  .input-field option { @apply bg-slate-800 text-white; }
+
+  /* ── Misc ───────────────────────────────────────── */
+  .divider  { @apply border-t border-white/[0.08]; }
+  .glow-ocean { box-shadow: 0 0 30px rgba(59,155,243,0.2),  0 0 60px rgba(59,155,243,0.05); }
+  .glow-coral { box-shadow: 0 0 30px rgba(253,79,15,0.2),   0 0 60px rgba(253,79,15,0.05); }
+
+  /* ── Leaflet ────────────────────────────────────── */
+  .leaflet-container {
+    @apply rounded-2xl;
+    background: #0f172a;
+  }
+  .leaflet-tile-pane        { filter: brightness(0.8) saturate(0.9); }
+  .leaflet-popup-content-wrapper {
+    background: #1e293b !important;
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 0.75rem !important;
+  }
+  .leaflet-popup-tip        { background: #1e293b !important; }
+
+  /* ── DatePicker ─────────────────────────────────── */
+  .react-datepicker {
+    @apply bg-slate-900 border border-white/10 rounded-xl text-white;
+    font-family: theme('fontFamily.sans') !important;
+  }
+  .react-datepicker__header   { @apply bg-slate-800 border-b border-white/10; }
+  .react-datepicker__current-month,
+  .react-datepicker__day-name { @apply text-white; }
+  .react-datepicker__day      { @apply text-slate-300 rounded-md; }
+  .react-datepicker__day:hover { @apply bg-ocean-600 text-white; }
+  .react-datepicker__day--selected { @apply bg-ocean-600 text-white; }
+  .react-datepicker__day--in-range { @apply bg-ocean-900 text-ocean-200; }
+  .react-datepicker__day--disabled { @apply text-slate-600; }
+  .react-datepicker-popper    { z-index: 9999 !important; }
+  .react-datepicker__navigation-icon::before { @apply border-slate-400; }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .aurora { animation: aurora 8s ease-in-out infinite; }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+    background-size: 200% auto;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+/* ── Keyframes (outside @layer so they're always present) ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-20px); }
+}
+@keyframes aurora {
+  0%, 100% { opacity: 0.3; transform: scale(1)    rotate(0deg);  }
+  33%       { opacity: 0.5; transform: scale(1.1)  rotate(5deg);  }
+  66%       { opacity: 0.2; transform: scale(0.95) rotate(-3deg); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
