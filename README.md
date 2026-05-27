@@ -2,7 +2,7 @@
 
 A responsive travel planning web application built with **React.js** and **Tailwind CSS**. Users can browse destinations, build itineraries, and customize their trips — all in a clean and easy-to-use interface.
 
-🔗 **Live Demo:** [trip-planner-link.vercel.app](https://trip-planner-link.vercel.app)  
+🔗 **Live Demo:** [trip-planner-link.vercel.app](https://tripplanner-nine.vercel.app/)  
 📁 **GitHub:** [github.com/NamanNagpal5155/Tripplanner](https://github.com/NamanNagpal5155/Tripplanner)
 
 ---
