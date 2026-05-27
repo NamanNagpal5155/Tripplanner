@@ -1,16 +1,127 @@
-# React + Vite
+# ✈️ Trip Planner – Travel Planning Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive travel planning web application built with **React.js** and **Tailwind CSS**. Users can browse destinations, build itineraries, and customize their trips — all in a clean and easy-to-use interface.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [trip-planner-link.vercel.app](https://trip-planner-link.vercel.app)  
+📁 **GitHub:** [github.com/NamanNagpal5155/Tripplanner](https://github.com/NamanNagpal5155/Tripplanner)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
+## 🚀 Features
 
-## React Compiler
+- 🌍 Browse and explore travel destinations
+- 🗓️ Create and customize trip itineraries
+- 🔌 Real-time destination data via third-party API integration
+- 📱 Fully responsive — works on mobile, tablet, and desktop
+- ⚡ Smooth UI with interactive React components
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Technology | Usage |
+|---|---|
+| React.js | Frontend framework |
+| Tailwind CSS | Styling and responsive design |
+| React Hooks (useState, useEffect) | State management |
+| REST API | Real-time travel data |
+| Vite / CRA | Project build tool |
+
+---
+
+## 📁 Project Structure
+
+```
+Tripplanner/
+├── public/
+├── src/
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Page-level components
+│   ├── hooks/            # Custom React hooks
+│   ├── utils/            # Helper functions
+│   ├── App.jsx
+│   └── main.jsx
+├── .env.example
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v16 or above)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/NamanNagpal5155/Tripplanner.git
+cd Tripplanner
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Set up environment variables**
+
+Create a `.env` file in the root directory and add your API key:
+
+```env
+VITE_API_KEY=your_api_key_here
+```
+
+4. **Start the development server**
+
+```bash
+npm run dev
+```
+
+The app will run at `http://localhost:5173`
+
+---
+
+## 🌐 Deployment
+
+This project is deployed on **Vercel**.  
+To deploy your own version:
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and import the repository
+3. Add your environment variables in the Vercel dashboard
+4. Click **Deploy**
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! If you find a bug or want to add a feature:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/your-feature-name`
+3. Commit your changes: `git commit -m "Add your feature"`
+4. Push to the branch: `git push origin feature/your-feature-name`
+5. Open a Pull Request
+
+---
+
+## 👨‍💻 Author
+
+**Naman Nagpal**  
+📧 [namannagpal84@gmail.com](mailto:namannagpal84@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/naman-nagpal-407848300)  
+💻 [GitHub](https://github.com/NamanNagpal5155)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
